@@ -105,3 +105,62 @@ arrayA.forEach(function(item, index, array){
 })
 
 // 함수
+function multiply(num1, num2) {
+    let result = num1 * num2
+    return result
+}
+// console.log(multiply(4, 7))
+
+// 함수표현식
+let multiply2 = function (num1, num2) {
+    return num1 * num2
+}
+
+// console.log(multiply2(3, 4))
+
+// 화살표함수
+let multiply3 = (num1, num2) => {
+    return num1 * num2
+}
+// console.log(multiply3(4, 5))
+
+// 화살표함수 생략1
+// {}안 코드가 return하는 문장 하나만 있다면, {}와 return을 생략가능
+let multiply4 = (num1, num2) => num1 * num2
+console.log(multiply4(3, 3))
+
+// 화살표함수 생략2
+// ()안에 매개변수가 하나만 있다면 ()를 생략 가능
+let cube = num => num ** 3
+console.log(cube(10))
+
+// 이벤트 (onclick)
+// document.querySelector('html').onclick = function(){
+//     alert('hello!')
+// }
+
+// 이벤트 (이벤트리스너)
+// addEventListener(무슨 일이 일어났을 때, 무슨 행동을 할 지)
+let myH1 = document.querySelector('h1')
+myH1.addEventListener('click', function(e){
+    // alert('hihi')
+    console.log(e)
+    console.log(e.clientX, e.clientY)
+})
+let myImg = document.querySelector('img')
+myImg.addEventListener('click', function(){
+    let src = myImg.getAttribute('src')
+
+    if(src=== 'images/cat.png'){
+        myImg.setAttribute('src', 'images/firefox-icon.png')
+    } else {
+        myImg.setAttribute('src', 'images/cat.png')
+    }
+    
+})
+
+let myInput = document.querySelector('input')
+myInput.addEventListener('keydown', function(e){
+    // console.log(e)
+    console.log(myInput.value)
+})
